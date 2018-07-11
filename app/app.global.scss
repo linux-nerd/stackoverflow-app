@@ -1,2 +1,18 @@
-@import "~font-awesome/css/font-awesome.css";
+// @import "~font-awesome/css/font-awesome.css";
+@import '~react-md/src/scss/react-md';
 
+$md-light-theme: true; // optional for light theme
+$md-primary-color: $md-light-blue-500;
+$md-secondary-color: $md-deep-orange-a-200;
+
+@include react-md-everything;
+
+@include react-md-theme-everything(
+  $md-primary-color,
+  $md-secondary-color,
+  false, // specifying dark-theme
+  'dark-theme' // class name to wrap dark-theme styles in
+);
+
+// Or for a subsection
+// @include react-md-theme-everything($md-light-blue-500, $md-deep-orange-a-200, $md-light-theme, 'custom-theme');

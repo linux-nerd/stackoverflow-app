@@ -1,0 +1,40 @@
+.item {
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+}
+
+.item .tags {
+    margin-right: 5px;
+}
+
+.tinyDetails {
+    display: flex;
+}
+
+.tinyDetails .wrapper {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.tinyDetails .wrapper .font24 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.tinyDetails .wrapper .font12 {
+    font-size: 12px;
+}
+
+.answered {
+    border: 1px solid green;
+}
+
+.isSelected {
+    background: green;
+    color: white;
+}
+
+.majorDetails{
+    margin-left: 20px;
+}
