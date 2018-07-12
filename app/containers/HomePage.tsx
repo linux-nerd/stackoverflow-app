@@ -5,9 +5,9 @@ import QuestionsContainer from './QuestionsPage';
 export class HomePage extends React.Component<RouteComponentProps<any>, void> {
   render() {
     return (
-      <div>
+      <main className='main'>
         <QuestionsContainer />
-      </div>
+      </main>
     );
   }
 }

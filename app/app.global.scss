@@ -16,3 +16,10 @@ $md-secondary-color: $md-deep-orange-a-200;
 
 // Or for a subsection
 // @include react-md-theme-everything($md-light-blue-500, $md-deep-orange-a-200, $md-light-theme, 'custom-theme');
+
+main.main {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
