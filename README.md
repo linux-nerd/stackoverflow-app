@@ -36,3 +36,6 @@ or run two servers with one command
 ```bash
 $ npm run dev
 ```
+
+# Sneak Peek
+![](./sneak-peek.png)
