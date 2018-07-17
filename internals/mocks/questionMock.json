@@ -1,0 +1,53 @@
+[
+  {
+    "tags": [
+      "javascript",
+      "reactjs",
+      "ecmascript-6"
+    ],
+    "owner": {
+      "reputation": 658,
+      "user_id": 5769544,
+      "user_type": "registered",
+      "accept_rate": 74,
+      "profile_image": "https://www.gravatar.com/avatar/ffc2903e8ed95dcf2eac4b350b03d108?s=128&d=identicon&r=PG&f=1",
+      "display_name": "bp123",
+      "link": "https://stackoverflow.com/users/5769544/bp123"
+    },
+    "is_answered": false,
+    "view_count": 28,
+    "answer_count": 1,
+    "score": 0,
+    "last_activity_date": 1531802893,
+    "creation_date": 1531800776,
+    "question_id": 51373135,
+    "link": "https://stackoverflow.com/questions/51373135/using-filter-with-includes-doesnt-filter",
+    "title": "Using filter with includes doesn&#39;t filter",
+    "body": "<p>I'm trying to filter out an array of objects which are <code>classes</code> within an object called studentUserProfile. When I run the code below, filter doesn't filter out anything.</p>\n\n<p>object <code>studentUserProfile</code>;</p>\n\n<pre><code>{  \n   \"_id\":\"ZgfgbGpMxF5T6pNT8\",\n   \"firstName\":\"Angela\",\n   \"classes\":[  \n      {  \n         \"classId\":\"3x8cNzzr4DQ4PioM7\"\n      },\n      {  \n         \"classId\":\"oehC4pWbFLDAjbzvt\"\n      }\n   ]\n}\n</code></pre>\n\n<p><code>filterIds = [\"oehC4pWbFLDAjbzvt\", \"3x8cNzzr4DQ4PioM7\"];</code></p>\n\n<p><strong>Code</strong></p>\n\n<pre><code>let studentUserProfiles = this.props.studentUserProfiles.map((studentUserProfile) =&gt; {\n  studentUserProfile.classes = studentUserProfile.classes.filter(myClass =&gt; filterIds.includes(myClass.classId));\n  return studentUserProfile;\n});\n</code></pre>\n"
+  },
+  {
+    "tags": [
+      "javascript",
+      "reactjs",
+      "scroll"
+    ],
+    "owner": {
+      "reputation": 1,
+      "user_id": 10091530,
+      "user_type": "registered",
+      "profile_image": "https://lh4.googleusercontent.com/-aY_IgvWb4Ho/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7p_PRE-Ac7TwJh7vESzQT4O2nIgNg/mo/photo.jpg?sz=128",
+      "display_name": "Kevin Chu",
+      "link": "https://stackoverflow.com/users/10091530/kevin-chu"
+    },
+    "is_answered": false,
+    "view_count": 11,
+    "answer_count": 0,
+    "score": 0,
+    "last_activity_date": 1531802945,
+    "creation_date": 1531802945,
+    "question_id": 51373392,
+    "link": "https://stackoverflow.com/questions/51373392/react-child-updates-change-parent-scroll-position",
+    "title": "React child updates change parent scroll position",
+    "body": "<p>I have a react container component that is suppose to house a list of child timer components. These child components are just countdown timers. To achieve this my child component class uses setInterval to update the child every second. As the updates happened, I noticed as I scrolled down or up the list, the container component would suddenly jump up or down in a noticeably big way exactly when the child timers update themselves, but the container's render method is never called. Along with this, if I simply don't scroll or stop scrolling, the jumping never happens. If I scrolled and then stopped scrolling, the onscroll handler keeps firing in sync with the child timer updates even though I stopped scrolling. I've never encountered a situation like this before. Can react children implicitly force their parent container to randomly scroll up and down when updating?</p>\n"
+  }
+]

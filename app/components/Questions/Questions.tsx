@@ -9,7 +9,7 @@ export const Questions = (props: any) => {
   });
 
   return (
-    <section>
+    <section className='question-wrapper'>
       <h2 className={styles.title}>Top Questions</h2>
       {questions}
     </section>

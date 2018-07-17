@@ -7,8 +7,6 @@ export const TinyDetails = (props: any) => {
     [styles.answered]: props.answer_count > 0 && props.type === 'answer',
     [styles.isSelected]: props.is_answered && props.type === 'answer'
   });
-
-  console.log(props.type);
   return (
     <div className={answerStyle}>
       <div><span className={styles.font24}>{props.title}</span></div>
