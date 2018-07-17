@@ -45,8 +45,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReactTypescript",
-    "appId": "io.github.irath96.ElectronReactTypescript",
+    "productName": "Stackoverflow App",
+    "appId": "io.github.linux-nerd.StackoverflowApp",
     "dmg": {
       "contents": [
         {
@@ -89,27 +89,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irath96/electron-react-typescript-boilerplate.git"
+    "url": "git+https://github.com/linux-nerd/stackoverflow-app.git"
   },
   "author": {
-    "name": "Alexander Rath",
-    "email": "irath96@gmail.com",
-    "url": "https://github.com/irath96"
+    "name": "Abhishek Prakash",
+    "email": "hello@abhishekprakash.com",
+    "url": "https://github.com/linux-nerd/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/irath96/electron-react-typescript-boilerplate/issues"
+    "url": "https://github.com/linux-nerd/stackoverflow-app/issues"
   },
   "keywords": [
     "electron",
-    "boilerplate",
     "react",
     "react-router",
-    "flux",
-    "webpack",
-    "react-hot"
+    "stackoverflow",
+    "desktop app"
   ],
-  "homepage": "https://github.com/irath96/electron-react-typescript-boilerplate#readme",
   "devDependencies": {
     "@types/classnames": "^2.2.4",
     "@types/enzyme": "^3.1.1",
