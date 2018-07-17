@@ -3,12 +3,41 @@ import '../utils/enzymeConfig';
 import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import { Questions } from '../../app/components/Questions/Questions';
-const mock = require('../../internals/mocks/questionMock.json');
+import { QuestionItem } from '../../app/components/Questions/QuestionItem';
+const mock: Array<IQuestions> = require('../../internals/mocks/questionMock.json');
 
+interface IQuestions {
+  tags: Array<string>;
+  owner: IOwner;
+  is_answered: boolean;
+  view_count: number;
+  answer_count: number;
+  score: number;
+  last_activity_date: number;
+  creation_date: number;
+  question_id: number;
+  link: string;
+  title: string;
+  body: string;
+}
+
+interface IOwner {
+  reputation: number;
+  user_id: number;
+  user_type: string;
+  accept_rate: number;
+  profile_image: string;
+  display_name: string;
+  link: string;
+}
+
+interface IQuestionsProps {
+  items: Array<IQuestions>;
+}
 
 describe('Questions', () => {
-  let props: any, mountedQuestionsScreen: ReactWrapper | undefined;
-  const questionsScreen = (): ReactWrapper => {
+  let props: IQuestionsProps, mountedQuestionsScreen: ReactWrapper<IQuestionsProps> | undefined;
+  const questionsScreen = (): ReactWrapper<IQuestionsProps> => {
     if (!mountedQuestionsScreen) {
       mountedQuestionsScreen = mount(<Questions {...props} />);
     }
@@ -36,5 +65,10 @@ describe('Questions', () => {
 
   it('should have props with two questions', () => {
     expect(props.items.length).toBe(2);
+  });
+
+  it('should have two QuestionItems', () => {
+    const quesItems = questionsScreen().find(QuestionItem);
+    expect(quesItems.length).toBe(2);
   });
 });
