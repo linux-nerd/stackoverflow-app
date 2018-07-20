@@ -4,32 +4,8 @@ import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import { Questions } from '../../app/components/Questions/Questions';
 import { QuestionItem } from '../../app/components/Questions/QuestionItem';
+import { IQuestions } from "../../app/actions/questions";
 const mock: Array<IQuestions> = require('../../internals/mocks/questionMock.json');
-
-interface IQuestions {
-  tags: Array<string>;
-  owner: IOwner;
-  is_answered: boolean;
-  view_count: number;
-  answer_count: number;
-  score: number;
-  last_activity_date: number;
-  creation_date: number;
-  question_id: number;
-  link: string;
-  title: string;
-  body: string;
-}
-
-interface IOwner {
-  reputation: number;
-  user_id: number;
-  user_type: string;
-  accept_rate: number;
-  profile_image: string;
-  display_name: string;
-  link: string;
-}
 
 interface IQuestionsProps {
   items: Array<IQuestions>;

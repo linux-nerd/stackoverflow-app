@@ -1,8 +1,14 @@
 import * as React from 'react';
 import { QuestionItem } from './QuestionItem';
+import { IQuestions } from '../../actions/questions'
 const styles = require('./question.scss');
-export const Questions = (props: any) => {
-  const questions = props.items.map((elm: any) => {
+
+interface IQuestionsProps {
+  items: Array<IQuestions>;
+}
+
+export const Questions = (props: IQuestionsProps) => {
+  const questions = props.items.map((elm: IQuestions) => {
     return (
       <QuestionItem {...elm} key={elm.question_id} />
     );

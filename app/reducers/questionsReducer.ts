@@ -1,15 +1,13 @@
-import { IAction } from '../actions/helpers';
-import { FETCH_QUESTIONS } from '../actions/questions';
+import { IActionWithPayload } from '../actions/helpers';
+import { FETCH_QUESTIONS, IPayload } from '../actions/questions';
 
-interface TAction extends IAction {
-  payload: any;
-}
-
-export default function questionsReducer(state: any = {items: []}, action: TAction) {
+export default function questionsReducer(state: IPayload = { items: [], has_more: true }, action: IActionWithPayload<IPayload>) {
   if (FETCH_QUESTIONS.test(action)) {
-    return Object.assign({}, ...state, {items: [...action.payload.items]})
-    // return {...state, items: action.payload.items};
+    state = Object.assign(
+      {},
+      state,
+      { items: [...state.items, ...action.payload.items], has_more: action.payload.has_more }
+    );
   }
   return state;
 }
-  
