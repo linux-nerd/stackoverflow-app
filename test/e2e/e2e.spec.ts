@@ -21,12 +21,12 @@ describe('main window', function spec() {
     }
   });
 
-  const findCounter = () => app.client.element('[data-tid="counter"]');
+  /* const findCounter = () => app.client.element('[data-tid="counter"]');
 
   const findButtons = async () => {
     const { value } = await app.client.elements('[data-tclass="btn"]');
     return value.map((btn: any) => btn.ELEMENT);
-  };
+  }; */
 
   it('should open window', async () => {
     const { client, browserWindow } = app;
@@ -34,10 +34,22 @@ describe('main window', function spec() {
     await client.waitUntilWindowLoaded();
     await delay(500);
     const title = await browserWindow.getTitle();
-    expect(title).toBe('Hello Electron React!');
+    expect(title).toBe('Stackoverflow');
   });
 
   it('should not have any logs in console of main window', async () => {
+    const { client } = app;
+    const logs = await client.getRenderProcessLogs();
+    // Print renderer process logs
+    logs.forEach((log: any) => {
+      console.log(log.message);
+      console.log(log.source);
+      console.log(log.level);
+    });
+    expect(logs).toHaveLength(0);
+  });
+
+  /* it('should not have any logs in console of main window', async () => {
     const { client } = app;
     const logs = await client.getRenderProcessLogs();
     // Print renderer process logs
@@ -110,5 +122,5 @@ describe('main window', function spec() {
     expect(
       await client.isExisting('[data-tid="container"]')
     ).toBe(true);
-  });
+  }); */
 });
