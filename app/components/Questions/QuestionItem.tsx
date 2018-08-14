@@ -1,6 +1,7 @@
 
 import * as React from 'react';
 import { Paper, Chip, Avatar } from 'react-md';
+import { Link } from 'react-router-dom';
 const styles = require('./question.scss');
 
 import { TinyDetails } from './TinyDetails';
@@ -20,7 +21,9 @@ export const QuestionItem = (props: IQuestions) => {
         <TinyDetails title={view_count} subTitle='Views' />
       </section>
       <section className={styles.majorDetails}>
-        <h3>{props.title}</h3>
+        <Link to={`/quesAns/${props.question_id}`} className={styles.basicAnchor}>
+          <h3>{props.title}</h3>
+        </Link>
         {
           props.tags.map((chip: string, index: number) => {
             return <Chip key={index} label={chip} className={styles.tags} avatar={<Avatar random>{chip[0].toUpperCase()}</Avatar>} />

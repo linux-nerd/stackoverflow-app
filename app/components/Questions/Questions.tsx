@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { QuestionItem } from './QuestionItem';
-import { IQuestions } from '../../actions/questions'
+import { IQuestions } from '../../actions/questions';
 const styles = require('./question.scss');
 
 interface IQuestionsProps {

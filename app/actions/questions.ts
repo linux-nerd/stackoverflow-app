@@ -30,7 +30,7 @@ export interface IPayload {
   items: Array<IQuestions>;
 }
 
-export const FETCH_QUESTIONS = <any>actionCreator('FETCH_QUESTIONS');
+export const FETCH_QUESTIONS = actionCreator('FETCH_QUESTIONS');
 
 export function fetchQuestions() {
   return (dispatch: Function) => {
