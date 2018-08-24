@@ -16,6 +16,7 @@ export interface IPayload {
   has_more: boolean;
   question: Array<IQuestions>;
   answers: Array<IAnswer>;
+  isLoading: boolean;
 }
 
 
@@ -29,7 +30,7 @@ export function fetchQuestionAnswer(questionId: number | string) {
       const answers = [...res.items[0].answers];
       const resClone = Object.assign({}, res);
       delete resClone.items[0].answers;
-      const newRes: IPayload = { has_more: res.has_more, question: resClone.items, answers };
+      const newRes: IPayload = { has_more: res.has_more, question: resClone.items, answers, isLoading: false };
       return newRes;
     }).then((res: IPayload) => {
       dispatch(FETCH_QUESTION_ANSWER(res));

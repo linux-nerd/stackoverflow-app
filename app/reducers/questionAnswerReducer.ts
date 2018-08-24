@@ -4,7 +4,8 @@ import { FETCH_QUESTION_ANSWER, IPayload } from '../actions/questionAnswer';
 const DEFAULT_PAYLOAD: IPayload = {
   has_more: false,
   question: [],
-  answers: []
+  answers: [],
+  isLoading: true
 };
 
 export default function questionAnswerReducer(state: IPayload = DEFAULT_PAYLOAD, action: IActionWithPayload<IPayload>) {
@@ -15,7 +16,8 @@ export default function questionAnswerReducer(state: IPayload = DEFAULT_PAYLOAD,
       {
         question: [...action.payload.question],
         answers: [...action.payload.answers],
-        has_more: action.payload.has_more
+        has_more: action.payload.has_more,
+        isLoading: action.payload.isLoading
       }
     );
   }

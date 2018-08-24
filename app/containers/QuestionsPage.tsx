@@ -4,6 +4,7 @@ import { connect, Dispatch } from 'react-redux';
 import { Questions } from '../components/Questions/Questions';
 import * as QuestionActions from '../actions/questions';
 import { IState } from '../reducers';
+import { WithLoader } from "../components/shared/WithLoader";
 
 function mapStateToProps(state: IState): Partial<any> {
   return {
@@ -15,13 +16,15 @@ function mapDispatchToProps(dispatch: Dispatch<IState>): Partial<any> {
   return bindActionCreators(QuestionActions as any, dispatch);
 }
 
+const QuestionWithLoader = WithLoader(Questions);
+
 class QuestionPage extends React.Component<any> {
   componentDidMount() {
     this.props.fetchQuestions();
   }
   render() {
     return (
-      <Questions {...this.props.questions}/>
+      <QuestionWithLoader {...this.props.questions} />
     );
   }
 }

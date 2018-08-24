@@ -28,6 +28,7 @@ export interface IOwner {
 export interface IPayload {
   has_more: boolean;
   items: Array<IQuestions>;
+  isLoading: boolean;
 }
 
 export const FETCH_QUESTIONS = actionCreator('FETCH_QUESTIONS');
@@ -37,7 +38,7 @@ export function fetchQuestions() {
     fetch('https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&tagged=javascript&site=stackoverflow&filter=!9Z(-wwYGT').then((res) => {
       return res.json();
     }).then(res => {
-      const newRes: IPayload = { has_more: res.has_more, items: res.items };
+      const newRes: IPayload = { has_more: res.has_more, items: res.items, isLoading: false };
       return newRes;
     }).then((res: IPayload) => {
       dispatch(FETCH_QUESTIONS(res));
